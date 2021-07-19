@@ -18,6 +18,11 @@ function openOthers(nowUrl) {
         let newUrl = changeHost(nowUrl, others[i]);
         if (newUrl === nowUrl) continue;
         window.open(newUrl, "_blank");
+        let count = localStorage.getItem("count");
+        if (count === null) {
+            count = 0;
+        }
+        localStorage.setItem("count", count + 1);
     }
 }
 function checkUrl(url) {
@@ -40,6 +45,20 @@ function clickListTitle(e){
     }
 
 }
+function checkCheckboxes() {
+    let checkBoxes = document.getElementsByClassName("courtInput");
+    if (checkBoxes != null) {
+        for (let i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].checked === false) return false;
+        }
+    }
+    return true;
+}
+function updateCheckboxAll() {
+    let checkBox = document.getElementById("all");
+    checkBox.checked = checkCheckboxes();;
+    localStorage.setItem(checkBox.getAttribute("data-url"), checkBox.checked);
+}
 function changeCheckboxAll(e) {
     let checkBoxes = document.getElementsByClassName("courtInput");
     for (let i = 0; i < checkBoxes.length; i++) {
@@ -50,6 +69,7 @@ function changeCheckboxAll(e) {
 }
 function changeCheckbox(e) {
     localStorage.setItem(e.currentTarget.getAttribute("data-url"), e.currentTarget.checked);
+    updateCheckboxAll();
 }
 function setCallbacks() {
     let listTitles = document.getElementsByClassName("listTitle");
