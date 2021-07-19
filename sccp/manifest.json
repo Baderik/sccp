@@ -1,0 +1,15 @@
+{
+  "name": "SCCP - Search for Court Cases in Primorye",
+  "icons": {
+    "48": "static/img/icon.png"
+  },
+  "description": "Упрощаем поиск судебных дел сразу на нескольких сайтах судов Приморского края",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_title": "Суды Приморского края",
+    "default_icon": "static/img/icon.png",
+    "default_popup": "templates/index.html"
+  },
+  "permissions": ["activeTab"]
+}
