@@ -6,9 +6,9 @@
 1. [Скачать архив](https://github.com/Baderik/sccp/archive/refs/heads/master.zip).
 2. Разархивируйте скачанный файл, у вас должна появиться папка "sccp-master".
 3. Откройте браузер и перейдите на страницу с расширениями:
-    * [Chrome](chrome://extensions/)
-    * [Edge](edge://extensions)
-    * [Firefox](about:debugging#/runtime/this-firefox)
+    * Chrome - <chrome://extensions/>
+    * Edge - <edge://extensions>
+    * Firefox - <about:debugging#/runtime/this-firefox>
 4. Включите режим разработчика (Не в Firefox)
 5. Нажмите кнопку для выбора расширения
     * Chrome - <b>Загрузить распакованное расширение</b>.
