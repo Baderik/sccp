@@ -22,7 +22,7 @@ function openOthers(nowUrl) {
         if (count === null) {
             count = 0;
         }
-        localStorage.setItem("count", count + 1);
+        localStorage.setItem("count", parseInt(count) + 1);
     }
 }
 function checkUrl(url) {
@@ -81,6 +81,7 @@ function setCallbacks() {
     let mainButton = document.getElementById("main");
     if (mainButton != null) {
         mainButton.onclick = function (event) {
+            localStorage.setItem("count", 0);
             chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
                 if (!checkUrl(tabs[0].url)) return;
                 openOthers(tabs[0].url);
