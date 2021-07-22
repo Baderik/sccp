@@ -11,5 +11,5 @@
     "default_icon": "static/img/icon.png",
     "default_popup": "templates/index.html"
   },
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab", "tabs", "storage"]
 }
